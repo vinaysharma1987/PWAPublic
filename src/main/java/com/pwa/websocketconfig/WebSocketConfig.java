@@ -19,8 +19,9 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
+        log.info("came for registration");
         registry.addEndpoint("/ws-register")
-                .setAllowedOrigins("https://app2.pw", "http://localhost:4200/", "http://localhost:8080/", "http://localhost:8181/")
+                .setAllowedOrigins("https://messenger-app-pwa-349817.el.r.appspot.com/","https://app2.pw", "http://localhost:4200/", "http://localhost:8080/", "http://localhost:8181/")
                 .setAllowedOriginPatterns("https://app2.pw/*")
                 .withSockJS();
     }
